@@ -1,14 +1,1055 @@
 <!DOCTYPE html>
+<html lang="id">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portofolio Refleksi Pengalaman Belajar PPG Calon Guru 2026 — Fahrurrizal Umam">
   <title>Fahrurrizal Umam — Portofolio Refleksi PPG 2026</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables & Theme setup */
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card-dark: #1e293b;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --bg-accent: #0284c7;
+      --bg-accent-soft: #e0f2fe;
+      
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --text-heading: #0f172a;
+      --text-light: #f8fafc;
+      --text-accent: #0284c7;
+      
+      --border-color: #e2e8f0;
+      --border-dark: #334155;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset & Global styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--text-heading);
+      line-height: 1.25;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--text-accent);
+      text-decoration: none;
+      transition: var(--transition-base);
+    }
+
+    /* Progress bar */
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 5%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      transition: var(--transition-base);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      letter-spacing: 0.5px;
+    }
+
+    .brand-mark {
+      background: var(--text-heading);
+      color: var(--text-light);
+      padding: 0.35rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background-color: var(--text-heading);
+      transition: var(--transition-base);
+    }
+
+    /* Layout Sections */
+    .section {
+      padding: 6rem 5%;
+    }
+
+    .section-light {
+      background-color: var(--bg-white);
+    }
+
+    .section-dark {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .section-dark h2, .section-dark h3, .section-dark h4 {
+      color: var(--text-light);
+    }
+
+    .section-accent {
+      background-color: var(--bg-accent-soft);
+    }
+
+    .section-soft {
+      background-color: #f1f5f9;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 3.5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-head h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .section-dark .section-head p {
+      color: #94a3b8;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 3rem;
+      padding-top: 8rem;
+      position: relative;
+    }
+
+    .hero-copy h1 {
+      font-size: 4rem;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-copy h1 em {
+      font-style: italic;
+      color: var(--text-accent);
+    }
+
+    .hero-role {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-meta {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 3px solid var(--text-accent);
+      padding-left: 1.25rem;
+      margin: 1.5rem 0 2rem;
+      color: var(--text-main);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .btn-primary {
+      background-color: var(--text-heading);
+      color: var(--text-light);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--text-accent);
+      color: var(--text-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--border-color);
+      color: var(--text-heading);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--text-heading);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: var(--bg-white);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      z-index: 2;
+      border: 1px solid var(--border-color);
+    }
+
+    .card-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: var(--text-accent);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card strong {
+      font-size: 1.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-line {
+      height: 2px;
+      width: 40px;
+      background: var(--text-accent);
+      margin: 1rem auto;
+    }
+
+    .floating-note {
+      position: absolute;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: var(--shadow-md);
+      z-index: 3;
+    }
+
+    .note-a { top: 10%; left: 0; }
+    .note-b { bottom: 15%; right: 0; }
+
+    .stats {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .stats div strong {
+      display: block;
+      font-size: 2.5rem;
+      color: var(--text-accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .stats div span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Profile Grid */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2.5rem;
+    }
+
+    .identity-card {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      background: var(--text-heading);
+      color: var(--text-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .identity-card h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.35rem;
+    }
+
+    .identity-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .identity-row span {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .identity-row strong {
+      color: var(--text-heading);
+    }
+
+    .mini-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--text-accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .edu-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-item span {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .edu-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .edu-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .reflection-box {
+      background: var(--bg-accent-soft);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      margin-top: 2rem;
+    }
+
+    .reflection-box p {
+      font-style: italic;
+      color: #0369a1;
+      font-size: 0.95rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      background: var(--bg-white);
+      padding: 1.75rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-base);
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-item span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-accent);
+      font-family: 'Playfair Display', serif;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-item p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Course Cards (Semester 1 & 2) */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .course-card {
+      background: var(--bg-card-dark);
+      border: 1px solid var(--border-dark);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-card > span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .course-card h3 {
+      font-size: 1.25rem;
+      margin: 0.5rem 0 1.5rem 0;
+    }
+
+    .course-content {
+      max-height: 250px;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      position: relative;
+    }
+
+    .course-content.expanded {
+      max-height: 2000px;
+    }
+
+    .course-content h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-accent);
+      margin: 1rem 0 0.25rem 0;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .course-content p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    .expand {
+      background: none;
+      border: none;
+      color: var(--text-accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0;
+    }
+
+    .course-note {
+      background: rgba(2, 132, 199, 0.1);
+      border: 1px solid rgba(2, 132, 199, 0.3);
+    }
+
+    .accent-line {
+      height: 3px;
+      background: var(--text-accent);
+      width: 50px;
+      margin-top: 1.5rem;
+    }
+
+    /* PPL Sections */
+    .four-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .field-card {
+      background: var(--bg-white);
+      padding: 1.75rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .field-card span {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .field-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .remember {
+      background: var(--bg-white);
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--text-accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .remember span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--text-accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .remember strong {
+      font-size: 1.25rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--text-heading);
+      display: block;
+    }
+
+    .dark-remember {
+      background: var(--bg-card-dark);
+      border-left-color: var(--text-accent);
+    }
+
+    .dark-remember strong {
+      color: var(--text-light);
+    }
+
+    /* Semester 2 Grid Layout */
+    .semester2-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-course, .simple-course {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .big-words {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+
+    .big-words b, .trio b, .pse b {
+      background: var(--text-heading);
+      color: var(--text-light);
+      font-size: 0.7rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .highlight {
+      background: var(--bg-accent-soft);
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .connection {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--text-accent);
+      font-weight: 600;
+      margin: 1rem 0;
+    }
+
+    /* PPL Mandiri Comparison */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .compare-col {
+      background: var(--bg-card-dark);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-dark);
+    }
+
+    .compare-col.current {
+      border-color: var(--text-accent);
+      background: rgba(2, 132, 199, 0.1);
+    }
+
+    .compare-arrow {
+      font-size: 2rem;
+      color: var(--text-accent);
+    }
+
+    /* Paradigm Shift Cards */
+    .paradigm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .paradigm-card {
+      background: var(--bg-white);
+      padding: 1.75rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .paradigm-card small {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .shift {
+      color: var(--text-accent);
+      font-weight: 700;
+      margin: 0.75rem 0;
+    }
+
+    .after small {
+      color: var(--text-accent);
+    }
+
+    /* Big Reflection Section */
+    .big-reflection {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .big-reflection h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .question {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-accent);
+      margin-bottom: 2rem;
+    }
+
+    .reflection-story {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .word-shifts {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .word-shifts div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      font-size: 0.9rem;
+    }
+
+    .word-shifts span {
+      color: var(--text-muted);
+    }
+
+    .word-shifts strong {
+      color: var(--text-accent);
+    }
+
+    /* RTL Cards */
+    .rtl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .rtl-card {
+      background: var(--bg-white);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .rtl-card ul {
+      margin-top: 1rem;
+      padding-left: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .questions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .questions b {
+      background: var(--bg-accent-soft);
+      color: #0369a1;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Manifesto Section */
+    .manifesto-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .manifesto-item {
+      background: var(--bg-white);
+      padding: 1.5rem 1.75rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .manifesto-item span {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .manifesto-item strong {
+      font-size: 0.95rem;
+      color: var(--text-heading);
+    }
+
+    /* Closing */
+    .closing {
+      padding: 8rem 5%;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .closing-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .closing h2 {
+      font-size: 3rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .closing p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .closing blockquote {
+      border-left: none;
+      padding: 0;
+      font-size: 1.35rem;
+      margin: 2.5rem 0;
+      color: var(--text-accent);
+    }
+
+    .signature {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .signature strong {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .signature span {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      color: #64748b;
+      padding: 3rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer strong {
+      color: var(--text-light);
+      display: block;
+    }
+
+    /* Scroll to Top Button */
+    .back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--text-heading);
+      color: var(--text-light);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-base);
+      z-index: 99;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-top:hover {
+      background: var(--text-accent);
+      transform: translateY(-3px);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.15s; }
+    .delay-2 { transition-delay: 0.3s; }
+
+    /* Responsive Breakdown */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 6rem;
+      }
+
+      .hero-copy h1 {
+        font-size: 3rem;
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compare {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-arrow {
+        transform: rotate(90deg);
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-150%);
+        transition: var(--transition-base);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+      }
+
+      .section-head h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Progress Bar -->
   <div class="progress" id="progress"></div>
 
+  <!-- Navbar -->
   <header class="navbar" id="navbar">
     <a class="brand" href="#beranda" aria-label="Fahrurrizal Umam — Beranda">
       <span class="brand-mark">FU</span>
@@ -32,6 +1073,7 @@
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero section" id="beranda">
       <div class="hero-copy reveal">
         <p class="eyebrow"><span></span> PORTOFOLIO REFLEKSI PENGALAMAN BELAJAR</p>
@@ -46,9 +1088,6 @@
       </div>
 
       <div class="hero-visual reveal delay-1" aria-hidden="true">
-        <div class="orbit orbit-1"></div>
-        <div class="orbit orbit-2"></div>
-        <div class="orbit orbit-3"></div>
         <div class="hero-card">
           <span class="card-kicker">SEBUAH PERJALANAN</span>
           <strong>Belajar<br><em>untuk bertumbuh.</em></strong>
@@ -67,6 +1106,7 @@
       </div>
     </section>
 
+    <!-- Profil -->
     <section class="section section-light" id="profil">
       <div class="section-head reveal">
         <p class="eyebrow">01 — PROFIL</p>
@@ -94,6 +1134,7 @@
       </div>
     </section>
 
+    <!-- Perjalanan -->
     <section class="section" id="perjalanan">
       <div class="section-head reveal">
         <p class="eyebrow">02 — ALUR PERJALANAN</p>
@@ -111,6 +1152,7 @@
       </div>
     </section>
 
+    <!-- Semester 1 -->
     <section class="section section-dark" id="semester-1">
       <div class="section-head reveal">
         <p class="eyebrow">03 — SEMESTER 1</p>
@@ -118,44 +1160,94 @@
         <p>Semester pertama menjadi tahap ketika saya membangun kembali pemahaman tentang pendidikan, murid, proses pembelajaran, asesmen, pola pikir, literasi, dan praktik mengajar.</p>
       </div>
       <div class="course-grid">
-        <article class="course-card reveal"><span>01</span><h3>Filosofi Pendidikan dan Pendidikan Nilai</h3><div class="course-content">
-          <h4>Yang Saya Pelajari</h4><p>Pendidikan bukan sekadar proses menyampaikan pengetahuan. Pendidikan merupakan proses membantu manusia berkembang secara utuh.</p>
-          <h4>Refleksi Saya</h4><p>Saya mulai memahami bahwa guru bukan sekadar orang yang berdiri di depan kelas untuk menjelaskan materi. Guru memiliki tanggung jawab untuk menuntun murid dalam proses perkembangannya.</p>
-          <h4>Perubahan dalam Diri Saya</h4><p>Sebelumnya saya cenderung melihat keberhasilan pembelajaran dari seberapa banyak materi yang dapat disampaikan. Sekarang saya mulai melihat keberhasilan pembelajaran dari perkembangan murid secara lebih utuh.</p>
-          <h4>Yang Saya Bawa ke Praktik</h4><p>Nilai-nilai Pancasila tidak cukup hanya dijelaskan sebagai materi. Nilai perlu dialami dan dipraktikkan melalui cara murid berdiskusi, bekerja sama, menghargai perbedaan, dan mengambil keputusan.</p>
-        </div><button class="expand">Buka refleksi <span>+</span></button></article>
+        <article class="course-card reveal">
+          <span>01</span>
+          <h3>Filosofi Pendidikan dan Pendidikan Nilai</h3>
+          <div class="course-content">
+            <h4>Yang Saya Pelajari</h4>
+            <p>Pendidikan bukan sekadar proses menyampaikan pengetahuan. Pendidikan merupakan proses membantu manusia berkembang secara utuh.</p>
+            <h4>Refleksi Saya</h4>
+            <p>Saya mulai memahami bahwa guru bukan sekadar orang yang berdiri di depan kelas untuk menjelaskan materi. Guru memiliki tanggung jawab untuk menuntun murid dalam proses perkembangannya.</p>
+            <h4>Perubahan dalam Diri Saya</h4>
+            <p>Sebelumnya saya cenderung melihat keberhasilan pembelajaran dari seberapa banyak materi yang dapat disampaikan. Sekarang saya mulai melihat keberhasilan pembelajaran dari perkembangan murid secara lebih utuh.</p>
+            <h4>Yang Saya Bawa ke Praktik</h4>
+            <p>Nilai-nilai Pancasila tidak cukup hanya dijelaskan sebagai materi. Nilai perlu dialami dan dipraktikkan melalui cara murid berdiskusi, bekerja sama, menghargai perbedaan, dan mengambil keputusan melalui <em>deliberasi publik</em> di kelas.</p>
+          </div>
+          <button class="expand">Buka refleksi <span>+</span></button>
+        </article>
 
-        <article class="course-card reveal"><span>02</span><h3>Pemahaman Peserta Didik</h3><div class="course-content">
-          <h4>Yang Saya Pelajari</h4><p>Setiap murid memiliki kemampuan awal, pengalaman, kebutuhan, minat, karakter, dan kondisi yang berbeda.</p>
-          <h4>Refleksi Saya</h4><p>Saya menyadari bahwa terkadang guru terlalu cepat menilai murid berdasarkan hasil belajar. Ketika seorang murid tidak aktif, belum tentu ia tidak memiliki gagasan.</p>
-          <h4>Perubahan dalam Diri Saya</h4><p>Saya menjadi lebih berhati-hati dalam memberikan label kepada murid.</p>
-          <h4>Yang Saya Bawa ke Praktik</h4><p>Saya ingin mengenal murid terlebih dahulu sebelum menentukan strategi pembelajaran.</p>
-        </div><button class="expand">Buka refleksi <span>+</span></button></article>
+        <article class="course-card reveal">
+          <span>02</span>
+          <h3>Pemahaman Peserta Didik</h3>
+          <div class="course-content">
+            <h4>Yang Saya Pelajari</h4>
+            <p>Setiap murid memiliki kemampuan awal, pengalaman, kebutuhan, minat, karakter, dan kondisi yang berbeda.</p>
+            <h4>Refleksi Saya</h4>
+            <p>Saya menyadari bahwa terkadang guru terlalu cepat menilai murid berdasarkan hasil belajar. Ketika seorang murid tidak aktif, belum tentu ia tidak memiliki gagasan.</p>
+            <h4>Perubahan dalam Diri Saya</h4>
+            <p>Saya menjadi lebih berhati-hati dalam memberikan label kepada murid.</p>
+            <h4>Yang Saya Bawa ke Praktik</h4>
+            <p>Saya ingin mengenal murid terlebih dahulu sebelum menentukan strategi pembelajaran untuk membentuk <em>karakter kewarganegaraan</em> (civic disposition) yang inklusif.</p>
+          </div>
+          <button class="expand">Buka refleksi <span>+</span></button>
+        </article>
 
-        <article class="course-card reveal"><span>03</span><h3>Pembelajaran Mendalam dan Asesmen Dasar</h3><div class="course-content">
-          <h4>Yang Saya Pelajari</h4><p>Pembelajaran harus membantu murid memahami, menghubungkan, mengaplikasikan, dan merefleksikan pengetahuan.</p>
-          <h4>Refleksi Saya</h4><p>Saya mulai melihat asesmen dengan cara yang berbeda. Asesmen bukan hanya alat untuk memperoleh nilai, tetapi sumber informasi tentang perkembangan murid.</p>
-          <h4>Perubahan dalam Diri Saya</h4><p>Saya memahami bahwa guru perlu membaca perkembangan murid selama proses pembelajaran berlangsung, bukan hanya pada akhir pembelajaran.</p>
-          <h4>Yang Saya Bawa ke Praktik</h4><p>Asesmen saya gunakan sebagai dasar untuk menentukan tindak lanjut pembelajaran.</p>
-        </div><button class="expand">Buka refleksi <span>+</span></button></article>
+        <article class="course-card reveal">
+          <span>03</span>
+          <h3>Pembelajaran Mendalam dan Asesmen Dasar</h3>
+          <div class="course-content">
+            <h4>Yang Saya Pelajari</h4>
+            <p>Pembelajaran harus membantu murid memahami, menghubungkan, mengaplikasikan, dan merefleksikan pengetahuan.</p>
+            <h4>Refleksi Saya</h4>
+            <p>Saya mulai melihat asesmen dengan cara yang berbeda. Asesmen bukan hanya alat untuk memperoleh nilai, tetapi sumber informasi tentang perkembangan murid.</p>
+            <h4>Perubahan dalam Diri Saya</h4>
+            <p>Saya memahami bahwa guru perlu membaca perkembangan murid selama proses pembelajaran berlangsung, bukan hanya pada akhir pembelajaran.</p>
+            <h4>Yang Saya Bawa ke Praktik</h4>
+            <p>Asesmen saya gunakan sebagai dasar untuk menentukan tindak lanjut pembelajaran.</p>
+          </div>
+          <button class="expand">Buka refleksi <span>+</span></button>
+        </article>
 
-        <article class="course-card reveal"><span>04</span><h3>Pola Pikir Bertumbuh</h3><div class="course-content">
-          <h4>Yang Saya Pelajari</h4><p>Kemampuan seseorang dapat berkembang melalui proses, usaha, strategi, dukungan, dan kesempatan belajar.</p>
-          <h4>Refleksi Saya</h4><p>Kesalahan bukan selalu tanda kegagalan. Kesulitan bukan berarti ketidakmampuan.</p>
-          <h4>Perubahan dalam Diri Saya</h4><p>Saya belajar menerapkan pola pikir bertumbuh bukan hanya kepada murid, tetapi juga kepada diri sendiri.</p>
-          <h4>Yang Saya Bawa ke Praktik</h4><p>Saya ingin membangun kelas yang membuat murid tidak takut salah dan memiliki keberanian untuk mencoba kembali.</p>
-        </div><button class="expand">Buka refleksi <span>+</span></button></article>
+        <article class="course-card reveal">
+          <span>04</span>
+          <h3>Pola Pikir Bertumbuh</h3>
+          <div class="course-content">
+            <h4>Yang Saya Pelajari</h4>
+            <p>Kemampuan seseorang dapat berkembang melalui proses, usaha, strategi, dukungan, dan kesempatan belajar.</p>
+            <h4>Refleksi Saya</h4>
+            <p>Kesalahan bukan selalu tanda kegagalan. Kesulitan bukan berarti ketidakmampuan.</p>
+            <h4>Perubahan dalam Diri Saya</h4>
+            <p>Saya belajar menerapkan pola pikir bertumbuh bukan hanya kepada murid, tetapi juga kepada diri sendiri.</p>
+            <h4>Yang Saya Bawa ke Praktik</h4>
+            <p>Saya ingin membangun kelas yang membuat murid tidak takut salah dan memiliki keberanian untuk mencoba kembali.</p>
+          </div>
+          <button class="expand">Buka refleksi <span>+</span></button>
+        </article>
 
-        <article class="course-card reveal"><span>05</span><h3>Literasi Lintas Mata Pelajaran</h3><div class="course-content">
-          <h4>Yang Saya Pelajari</h4><p>Literasi bukan hanya kemampuan membaca dan menulis, tetapi juga kemampuan memahami informasi, berpikir kritis, menilai informasi, dan menyampaikan gagasan.</p>
-          <h4>Refleksi Saya</h4><p>Sebagai guru Pendidikan Pancasila, saya perlu membantu murid menjadi pengguna informasi yang kritis dan bertanggung jawab.</p>
-          <h4>Yang Saya Bawa ke Praktik</h4><p>Saya ingin menghadirkan sumber belajar yang memungkinkan murid membaca, membandingkan informasi, berdiskusi, dan memberikan pendapat berdasarkan alasan.</p>
-        </div><button class="expand">Buka refleksi <span>+</span></button></article>
+        <article class="course-card reveal">
+          <span>05</span>
+          <h3>Literasi Lintas Mata Pelajaran</h3>
+          <div class="course-content">
+            <h4>Yang Saya Pelajari</h4>
+            <p>Literasi bukan hanya kemampuan membaca dan menulis, tetapi juga kemampuan memahami informasi, berpikir kritis, menilai informasi, dan menyampaikan gagasan.</p>
+            <h4>Refleksi Saya</h4>
+            <p>Sebagai guru Pendidikan Pancasila, saya perlu membantu murid menjadi pengguna informasi yang kritis dan bertanggung jawab.</p>
+            <h4>Yang Saya Bawa ke Praktik</h4>
+            <p>Saya ingin menghadirkan sumber belajar yang memungkinkan murid membaca, membandingkan informasi, berdiskusi, dan memberikan pendapat berdasarkan alasan yang logis.</p>
+          </div>
+          <button class="expand">Buka refleksi <span>+</span></button>
+        </article>
 
-        <article class="course-card course-note reveal"><span>06</span><h3>Fondasi yang Mulai Terhubung</h3><p>Kelima pengalaman belajar ini mulai menggeser perhatian saya: dari sekadar “apa yang akan saya ajarkan” menuju “bagaimana murid dapat belajar”.</p><div class="accent-line"></div></article>
+        <article class="course-card course-note reveal">
+          <span>06</span>
+          <h3>Fondasi yang Mulai Terhubung</h3>
+          <p>Kelima pengalaman belajar ini mulai menggeser perhatian saya: dari sekadar “apa yang akan saya ajarkan” menuju “bagaimana murid dapat belajar”.</p>
+          <div class="accent-line"></div>
+        </article>
       </div>
     </section>
 
+    <!-- PPL Terbimbing -->
     <section class="section section-accent" id="ppl-terbimbing">
       <div class="section-head reveal">
         <p class="eyebrow">04 — PENGALAMAN LAPANGAN 01</p>
@@ -164,14 +1256,34 @@
         <p>PPL Terbimbing menjadi ruang pertama bagi saya untuk menguji berbagai pemahaman yang diperoleh selama perkuliahan.</p>
       </div>
       <div class="four-grid">
-        <div class="field-card reveal"><span>01</span><h3>Belajar Mengelola Kelas</h3><p>Saya belajar bahwa pengelolaan kelas membutuhkan instruksi yang jelas, pengaturan waktu, dan kemampuan membaca kondisi murid.</p></div>
-        <div class="field-card reveal"><span>02</span><h3>Belajar dari Respons Murid</h3><p>Saya menemukan bahwa tidak semua murid merespons pembelajaran dengan cara yang sama.</p></div>
-        <div class="field-card reveal"><span>03</span><h3>Belajar dari Umpan Balik</h3><p>Masukan dari guru dan pengalaman selama pembelajaran menjadi bahan untuk memperbaiki praktik saya.</p></div>
-        <div class="field-card reveal"><span>04</span><h3>Menghubungkan Teori dan Praktik</h3><p>Saya menyadari bahwa teori memberikan dasar, tetapi pengalaman di kelas mengajarkan bagaimana menerapkannya secara fleksibel.</p></div>
+        <div class="field-card reveal">
+          <span>01</span>
+          <h3>Belajar Mengelola Kelas</h3>
+          <p>Saya belajar bahwa pengelolaan kelas membutuhkan instruksi yang jelas, pengaturan waktu, dan kemampuan membaca kondisi dinamika murid saat berdiskusi.</p>
+        </div>
+        <div class="field-card reveal">
+          <span>02</span>
+          <h3>Belajar dari Respons Murid</h3>
+          <p>Saat simulasi debat mengenai isu partisipasi kewarganegaraan di SMAN 8 Mataram, saya mendapati tidak semua murid merespons dengan cara sama. Siswa yang tenang ber berberpendapat sangat berbobot saat diberi ruang refleksi tertulis.</p>
+        </div>
+        <div class="field-card reveal">
+          <span>03</span>
+          <h3>Belajar dari Umpan Balik</h3>
+          <p>Masukan dari guru pamong dan dosen pembimbing menjadi bahan berharga untuk memoles metode fasilitasi deliberasi publik di kelas.</p>
+        </div>
+        <div class="field-card reveal">
+          <span>04</span>
+          <h3>Menghubungkan Teori dan Praktik</h3>
+          <p>Saya menyadari bahwa teori memberikan dasar, tetapi pengalaman di kelas mengajarkan bagaimana menerapkannya secara fleksibel.</p>
+        </div>
       </div>
-      <div class="remember reveal"><span>PELAJARAN YANG PALING SAYA INGAT</span><strong>“Saya tidak cukup hanya memiliki rencana pembelajaran. Saya harus mampu merespons apa yang benar-benar terjadi di kelas.”</strong></div>
+      <div class="remember reveal">
+        <span>PELAJARAN YANG PALING SAYA INGAT</span>
+        <strong>“Saya tidak cukup hanya memiliki rencana pembelajaran. Saya harus mampu merespons apa yang benar-benar terjadi di kelas.”</strong>
+      </div>
     </section>
 
+    <!-- Semester 2 -->
     <section class="section section-light" id="semester-2">
       <div class="section-head reveal">
         <p class="eyebrow">05 — SEMESTER 2</p>
@@ -179,14 +1291,50 @@
         <p>Jika Semester 1 menjadi tahap membangun fondasi, Semester 2 menjadi tahap memperdalam pemahaman dan menerapkannya dalam pengalaman yang lebih nyata.</p>
       </div>
       <div class="semester2-grid">
-        <article class="feature-course reveal"><span>07</span><h3>Pembelajaran Mendalam dan Asesmen Lanjutan</h3><div class="big-words"><b>BERKESADARAN</b><b>BERMAKNA</b><b>MENGGEMBIRAKAN</b></div><p>Saya semakin memahami bahwa pembelajaran yang menyenangkan tidak selalu berarti pembelajaran yang penuh permainan. Pembelajaran dapat menggembirakan ketika murid merasa dihargai, merasa mampu, memiliki kesempatan berpartisipasi, dan memahami alasan mengapa mereka perlu belajar sesuatu.</p><div class="flow">Memahami <i>→</i> Mengaplikasikan <i>→</i> Merefleksi</div></article>
-        <article class="simple-course reveal"><span>08</span><h3>Etno Sasambo</h3><p>Etno Sasambo memberikan pengalaman untuk melihat pendidikan dari konteks budaya lokal. Sebagai calon guru di Nusa Tenggara Barat, saya menyadari bahwa budaya di sekitar murid dapat menjadi sumber belajar yang dekat dengan kehidupan mereka.</p><div class="highlight">Budaya bukan sekadar materi.<br><strong>Budaya dapat menjadi konteks belajar.</strong></div></article>
-        <article class="simple-course reveal"><span>09</span><h3>Projek Kepemimpinan</h3><p class="project-title">PROJEK GARUDA LITERASI<br><strong>“Dari Buku, Tumbuh Mimpi”</strong></p><p><strong>Lokasi:</strong> Dusun Murpeji, Lingsar, Lombok Barat</p><p>Melalui Projek Kepemimpinan, saya belajar bahwa guru juga harus mampu bekerja bersama orang lain dan berkontribusi di luar ruang kelas.</p><div class="trio"><b>Kolaborasi</b><b>Kepemimpinan</b><b>Pengabdian</b></div><p>Pengalaman ini mengajarkan saya bahwa kepemimpinan bukan hanya tentang memberikan arahan, tetapi juga mau terlibat, mendengarkan, bertanggung jawab, dan bekerja bersama orang lain.</p></article>
-        <article class="simple-course reveal"><span>10</span><h3>Seminar PPG</h3><h4>Ketika Semua Pembelajaran Mulai Terhubung</h4><div class="connection">Filosofi Pendidikan <i>↓</i> Pemahaman Murid <i>↓</i> Pembelajaran <i>↓</i> Asesmen <i>↓</i> Literasi <i>↓</i> Pola Pikir Bertumbuh <i>↓</i> PSE <i>↓</i> Budaya <i>↓</i> Kepemimpinan <i>↓</i> PPL <i>↓</i> <strong>Guru Profesional</strong></div><p>Seminar PPG menjadi ruang bagi saya untuk melihat kembali seluruh perjalanan tersebut. Saya menyadari bahwa mata kuliah dalam PPG sebenarnya tidak berdiri sendiri.</p></article>
-        <article class="simple-course reveal"><span>11</span><h3>Pembelajaran Sosial Emosional</h3><div class="pse"><b>Kesadaran Diri</b><b>Pengelolaan Diri</b><b>Kesadaran Sosial</b><b>Keterampilan Berelasi</b><b>Pengambilan Keputusan</b></div><p>Saya semakin memahami bahwa proses belajar tidak hanya berkaitan dengan aspek kognitif. Kondisi emosional dan hubungan sosial juga memengaruhi kesiapan murid untuk belajar.</p><blockquote>“Kelas yang baik bukan hanya tempat murid memahami materi, tetapi juga tempat murid merasa aman untuk belajar.”</blockquote></article>
+        <article class="feature-course reveal">
+          <span>07</span>
+          <h3>Pembelajaran Mendalam dan Asesmen Lanjutan</h3>
+          <div class="big-words"><b>BERKESADARAN</b><b>BERMAKNA</b><b>MENGGEMBIRAKAN</b></div>
+          <p>Saya semakin memahami bahwa pembelajaran yang menyenangkan tidak selalu berarti pembelajaran yang penuh permainan. Pembelajaran dapat menggembirakan ketika murid merasa dihargai, merasa mampu, memiliki kesempatan berpartisipasi, dan memahami alasan mengapa mereka perlu belajar sesuatu.</p>
+          <div class="flow">Memahami <i>→</i> Mengaplikasikan <i>→</i> Merefleksi</div>
+        </article>
+
+        <article class="simple-course reveal">
+          <span>08</span>
+          <h3>Etno Sasambo</h3>
+          <p>Etno Sasambo memberikan pengalaman untuk melihat pendidikan dari konteks budaya lokal. Sebagai calon guru di Nusa Tenggara Barat, saya menyadari bahwa budaya di sekitar murid dapat menjadi sumber belajar yang dekat dengan kehidupan mereka.</p>
+          <div class="highlight">Budaya bukan sekadar materi.<br><strong>Budaya dapat menjadi konteks belajar.</strong></div>
+        </article>
+
+        <article class="simple-course reveal">
+          <span>09</span>
+          <h3>Projek Kepemimpinan</h3>
+          <p class="project-title">PROJEK GARUDA LITERASI<br><strong>“Dari Buku, Tumbuh Mimpi”</strong></p>
+          <p><strong>Lokasi:</strong> Dusun Murpeji, Lingsar, Lombok Barat</p>
+          <p>Melalui Projek Kepemimpinan, saya belajar bahwa guru juga harus mampu bekerja bersama orang lain dan berkontribusi di luar ruang kelas.</p>
+          <div class="trio"><b>Kolaborasi</b><b>Kepemimpinan</b><b>Pengabdian</b></div>
+          <p>Pengalaman ini mengajarkan saya bahwa kepemimpinan bukan hanya tentang memberikan arahan, tetapi juga mau terlibat, mendengarkan, bertanggung jawab, dan bekerja bersama orang lain.</p>
+        </article>
+
+        <article class="simple-course reveal">
+          <span>10</span>
+          <h3>Seminar PPG</h3>
+          <h4>Ketika Semua Pembelajaran Mulai Terhubung</h4>
+          <div class="connection">Filosofi Pendidikan <i>↓</i> Pemahaman Murid <i>↓</i> Pembelajaran <i>↓</i> Asesmen <i>↓</i> Literasi <i>↓</i> Pola Pikir Bertumbuh <i>↓</i> PSE <i>↓</i> Budaya <i>↓</i> Kepemimpinan <i>↓</i> PPL <i>↓</i> <strong>Guru Profesional</strong></div>
+          <p>Seminar PPG menjadi ruang bagi saya untuk melihat kembali seluruh perjalanan tersebut. Saya menyadari bahwa mata kuliah dalam PPG sebenarnya tidak berdiri sendiri.</p>
+        </article>
+
+        <article class="simple-course reveal">
+          <span>11</span>
+          <h3>Pembelajaran Sosial Emosional</h3>
+          <div class="pse"><b>Kesadaran Diri</b><b>Pengelolaan Diri</b><b>Kesadaran Sosial</b><b>Keterampilan Berelasi</b><b>Pengambilan Keputusan</b></div>
+          <p>Saya semakin memahami bahwa proses belajar tidak hanya berkaitan dengan aspek kognitif. Kondisi emosional dan hubungan sosial juga memengaruhi kesiapan murid untuk belajar.</p>
+          <blockquote>“Kelas yang baik bukan hanya tempat murid memahami materi, tetapi juga tempat murid merasa aman untuk belajar.”</blockquote>
+        </article>
       </div>
     </section>
 
+    <!-- PPL Mandiri -->
     <section class="section section-dark" id="ppl-mandiri">
       <div class="section-head reveal">
         <p class="eyebrow">06 — PENGALAMAN LAPANGAN 02</p>
@@ -195,27 +1343,69 @@
         <p>Jika PPL Terbimbing membuat saya banyak belajar melalui arahan dan umpan balik, PPL Mandiri membuat saya harus lebih bertanggung jawab terhadap keputusan pembelajaran yang saya ambil.</p>
       </div>
       <div class="compare reveal">
-        <div class="compare-col"><span>PPL TERBIMBING</span><h3>Belajar dengan arahan</h3><p>Menerima pendampingan</p><p>Menguji pemahaman</p><p>Menerima umpan balik</p></div>
+        <div class="compare-col">
+          <span>PPL TERBIMBING</span>
+          <h3>Belajar dengan arahan</h3>
+          <p>Menerima pendampingan</p>
+          <p>Menguji pemahaman</p>
+          <p>Menerima umpan balik</p>
+        </div>
         <div class="compare-arrow">→</div>
-        <div class="compare-col current"><span>PPL MANDIRI</span><h3>Merancang sendiri</h3><p>Mengambil keputusan</p><p>Mengelola pembelajaran</p><p>Melakukan refleksi dan perbaikan</p></div>
+        <div class="compare-col current">
+          <span>PPL MANDIRI</span>
+          <h3>Merancang sendiri</h3>
+          <p>Mengambil keputusan</p>
+          <p>Mengelola pembelajaran</p>
+          <p>Melakukan refleksi dan perbaikan</p>
+        </div>
       </div>
-      <div class="remember dark-remember reveal"><span>PERUBAHAN YANG SAYA RASAKAN</span><strong>Saya menjadi lebih sadar bahwa guru harus memiliki fleksibilitas. Rencana pembelajaran memang penting, tetapi guru juga harus mampu menyesuaikan diri dengan kondisi nyata di kelas.</strong></div>
+      <div class="remember dark-remember reveal">
+        <span>PERUBAHAN YANG SAYA RASAKAN</span>
+        <strong>Saya menjadi lebih sadar bahwa guru harus memiliki fleksibilitas. Rencana pembelajaran memang penting, tetapi guru juga harus mampu menyesuaikan diri dengan kondisi nyata di kelas.</strong>
+      </div>
     </section>
 
+    <!-- Perubahan Paradigma -->
     <section class="section" id="paradigma">
       <div class="section-head reveal">
         <p class="eyebrow">07 — PERUBAHAN PARADIGMA</p>
         <h2>Dari Cara Lama<br>Menuju Cara Pandang Baru</h2>
       </div>
       <div class="paradigm-grid">
-        <div class="paradigm-card reveal"><span>01</span><div><small>SEBELUM</small><p>Guru menyampaikan materi.</p></div><div class="shift">↓</div><div class="after"><small>SEKARANG</small><p>Guru membantu murid belajar.</p></div></div>
-        <div class="paradigm-card reveal"><span>02</span><div><small>SEBELUM</small><p>Asesmen digunakan untuk nilai.</p></div><div class="shift">↓</div><div class="after"><small>SEKARANG</small><p>Asesmen digunakan untuk mengetahui perkembangan dan menentukan tindak lanjut.</p></div></div>
-        <div class="paradigm-card reveal"><span>03</span><div><small>SEBELUM</small><p>Semua murid diberi pembelajaran yang sama.</p></div><div class="shift">↓</div><div class="after"><small>SEKARANG</small><p>Pembelajaran perlu mempertimbangkan kebutuhan murid.</p></div></div>
-        <div class="paradigm-card reveal"><span>04</span><div><small>SEBELUM</small><p>Kesalahan dianggap sebagai kegagalan.</p></div><div class="shift">↓</div><div class="after"><small>SEKARANG</small><p>Kesalahan menjadi bagian dari proses belajar.</p></div></div>
-        <div class="paradigm-card reveal"><span>05</span><div><small>SEBELUM</small><p>Guru mengajar murid.</p></div><div class="shift">↓</div><div class="after"><small>SEKARANG</small><p>Guru dan murid sama-sama belajar.</p></div></div>
+        <div class="paradigm-card reveal">
+          <span>01</span>
+          <div><small>SEBELUM</small><p>Guru menyampaikan materi.</p></div>
+          <div class="shift">↓</div>
+          <div class="after"><small>SEKARANG</small><p>Guru membantu murid belajar.</p></div>
+        </div>
+        <div class="paradigm-card reveal">
+          <span>02</span>
+          <div><small>SEBELUM</small><p>Asesmen digunakan untuk nilai.</p></div>
+          <div class="shift">↓</div>
+          <div class="after"><small>SEKARANG</small><p>Asesmen digunakan untuk mengetahui perkembangan dan menentukan tindak lanjut.</p></div>
+        </div>
+        <div class="paradigm-card reveal">
+          <span>03</span>
+          <div><small>SEBELUM</small><p>Semua murid diberi pembelajaran yang sama.</p></div>
+          <div class="shift">↓</div>
+          <div class="after"><small>SEKARANG</small><p>Pembelajaran perlu mempertimbangkan kebutuhan murid.</p></div>
+        </div>
+        <div class="paradigm-card reveal">
+          <span>04</span>
+          <div><small>SEBELUM</small><p>Kesalahan dianggap sebagai kegagalan.</p></div>
+          <div class="shift">↓</div>
+          <div class="after"><small>SEKARANG</small><p>Kesalahan menjadi bagian dari proses belajar.</p></div>
+        </div>
+        <div class="paradigm-card reveal">
+          <span>05</span>
+          <div><small>SEBELUM</small><p>Guru mengajar murid.</p></div>
+          <div class="shift">↓</div>
+          <div class="after"><small>SEKARANG</small><p>Guru dan murid sama-sama belajar.</p></div>
+        </div>
       </div>
     </section>
 
+    <!-- Refleksi Besar -->
     <section class="section section-soft" id="refleksi">
       <div class="big-reflection reveal">
         <p class="eyebrow">08 — REFLEKSI BESAR</p>
@@ -233,6 +1423,7 @@
       </div>
     </section>
 
+    <!-- Rencana Tindak Lanjut -->
     <section class="section section-light" id="rtl">
       <div class="section-head reveal">
         <p class="eyebrow">09 — LANGKAH KE DEPAN</p>
@@ -240,12 +1431,47 @@
         <p>Ketika Saya Memulai Karir sebagai Guru</p>
       </div>
       <div class="rtl-grid">
-        <article class="rtl-card reveal"><span>01</span><h3>MENGENAL MURID</h3><p>Saya akan berusaha mengenal murid sebelum menentukan cara mengajar.</p><ul><li>Kemampuan awal</li><li>Kebutuhan belajar</li><li>Karakter</li><li>Minat</li><li>Kondisi sosial emosional</li></ul></article>
-        <article class="rtl-card reveal"><span>02</span><h3>MEMBANGUN PEMBELAJARAN BERMAKNA</h3><p>Saya akan membuat pembelajaran dekat dengan kehidupan murid.</p><ul><li>Kasus nyata</li><li>Diskusi</li><li>Bermain peran</li><li>Aktivitas kontekstual</li><li>Refleksi</li></ul></article>
-        <article class="rtl-card reveal"><span>03</span><h3>TERUS MELAKUKAN REFLEKSI</h3><p>Saya akan menjadikan refleksi sebagai kebiasaan profesional.</p><div class="questions"><b>Apa yang berhasil?</b><b>Apa yang belum berhasil?</b><b>Apa yang dirasakan murid?</b><b>Apa yang perlu saya perbaiki?</b></div></article>
+        <article class="rtl-card reveal">
+          <span>01</span>
+          <h3>MENGENAL MURID</h3>
+          <p>Saya akan berusaha mengenal murid sebelum menentukan cara mengajar.</p>
+          <ul>
+            <li>Kemampuan awal</li>
+            <li>Kebutuhan belajar</li>
+            <li>Karakter kewarganegaraan</li>
+            <li>Minat</li>
+            <li>Kondisi sosial emosional</li>
+          </ul>
+        </article>
+
+        <article class="rtl-card reveal">
+          <span>02</span>
+          <h3>MEMBANGUN PEMBELAJARAN BERMAKNA</h3>
+          <p>Saya akan membuat pembelajaran dekat dengan kehidupan murid.</p>
+          <ul>
+            <li>Studi kasus isu kewarganegaraan nyata</li>
+            <li>Deliberasi dan diskusi publik</li>
+            <li>Bermain peran (simulasi)</li>
+            <li>Aktivitas kontekstual etno-budaya</li>
+            <li>Refleksi kritis</li>
+          </ul>
+        </article>
+
+        <article class="rtl-card reveal">
+          <span>03</span>
+          <h3>TERUS MELAKUKAN REFLEKSI</h3>
+          <p>Saya akan menjadikan refleksi sebagai kebiasaan profesional.</p>
+          <div class="questions">
+            <b>Apa yang berhasil?</b>
+            <b>Apa yang belum berhasil?</b>
+            <b>Apa yang dirasakan murid?</b>
+            <b>Apa yang perlu saya perbaiki?</b>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- Komitmen -->
     <section class="section manifesto" id="komitmen">
       <div class="section-head reveal">
         <p class="eyebrow">10 — KOMITMEN</p>
@@ -253,17 +1479,16 @@
       </div>
       <div class="manifesto-list">
         <div class="manifesto-item reveal"><span>01</span><strong>Saya akan memahami murid sebelum mengajarnya.</strong></div>
-        <div class="manifesto-item reveal"><span>02</span><strong>Saya akan menghargai perbedaan.</strong></div>
-        <div class="manifesto-item reveal"><span>03</span><strong>Saya akan merancang pembelajaran yang bermakna.</strong></div>
+        <div class="manifesto-item reveal"><span>02</span><strong>Saya akan menghargai keberagaman dan perbedaan.</strong></div>
+        <div class="manifesto-item reveal"><span>03</span><strong>Saya akan merancang pembelajaran kewarganegaraan yang bermakna.</strong></div>
         <div class="manifesto-item reveal"><span>04</span><strong>Saya akan menggunakan asesmen untuk membantu murid berkembang.</strong></div>
-        <div class="manifesto-item reveal"><span>05</span><strong>Saya akan menciptakan ruang belajar yang aman.</strong></div>
-        <div class="manifesto-item reveal"><span>06</span><strong>Saya akan terbuka terhadap kritik dan masukan.</strong></div>
-        <div class="manifesto-item reveal"><span>07</span><strong>Saya akan terus belajar.</strong></div>
-        <div class="manifesto-item reveal"><span>08</span><strong>Saya akan terus melakukan refleksi.</strong></div>
-        <div class="manifesto-item reveal"><span>09</span><strong>Saya akan terus berkembang bersama murid.</strong></div>
+        <div class="manifesto-item reveal"><span>05</span><strong>Saya akan menciptakan ruang belajar yang aman dan inklusif.</strong></div>
+        <div class="manifesto-item reveal"><span>06</span><strong>Saya akan terbuka terhadap kritik, masukan, dan perubahan.</strong></div>
+        <div class="manifesto-item reveal"><span>07</span><strong>Saya berkomitmen pada pembelajaran seumur hidup dan praktik reflektif yang berkelanjutan.</strong></div>
       </div>
     </section>
 
+    <!-- Penutup -->
     <section class="closing" id="penutup">
       <div class="closing-inner reveal">
         <p class="eyebrow">11 — PENUTUP</p>
@@ -273,16 +1498,131 @@
         <p>Saya ingin menjadi guru yang tidak berhenti belajar setelah memperoleh profesi.</p>
         <p>Saya ingin menjadi guru yang terus bertumbuh agar mampu membantu murid bertumbuh.</p>
         <blockquote>“Terus belajar agar dapat terus membantu murid bertumbuh.”</blockquote>
-        <div class="signature"><strong>FAHRURRIZAL UMAM</strong><span>PPG Calon Guru 2026</span><span>Pendidikan Pancasila dan Kewarganegaraan</span><span>FKIP Universitas Mataram</span></div>
+        <div class="signature">
+          <strong>FAHRURRIZAL UMAM</strong>
+          <span>PPG Calon Guru 2026</span>
+          <span>Pendidikan Pancasila dan Kewarganegaraan</span>
+          <span>FKIP Universitas Mataram</span>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div><strong>FAHRURRIZAL UMAM</strong><span>Portofolio Refleksi Pengalaman Belajar</span></div>
-    <div><span>PPG Calon Guru 2026</span><span>Pendidikan Pancasila dan Kewarganegaraan</span><span>FKIP Universitas Mataram</span></div>
+    <div>
+      <strong>FAHRURRIZAL UMAM</strong>
+      <span>Portofolio Refleksi Pengalaman Belajar</span>
+    </div>
+    <div>
+      <span>PPG Calon Guru 2026</span>
+      <span>Pendidikan Pancasila dan Kewarganegaraan</span>
+      <span>FKIP Universitas Mataram</span>
+    </div>
     <small>© 2026 Fahrurrizal Umam</small>
   </footer>
 
   <button class="back-top" id="backTop" aria-label="Kembali ke atas">↑</button>
-  <script src="script.js"></script>
+
+  <script>
+    // Scroll progress bar
+    const progressBar = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Back to top button visibility
+    const backTopBtn = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backTopBtn.classList.add('visible');
+      } else {
+        backTopBtn.classList.remove('visible');
+      }
+    });
+
+    backTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Expand/Collapse Course Reflections
+    const expandButtons = document.querySelectorAll('.expand');
+    expandButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.previousElementSibling;
+        content.classList.toggle('expanded');
+        if (content.classList.contains('expanded')) {
+          button.innerHTML = 'Tutup refleksi <span>−</span>';
+        } else {
+          button.innerHTML = 'Buka refleksi <span>+</span>';
+        }
+      });
+    });
+
+    // Scroll reveal observer
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Number counters animation for stats section
+    const statNumbers = document.querySelectorAll('[data-count]');
+    let animated = false;
+
+    const statsSection = document.getElementById('stats');
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          statNumbers.forEach(num => {
+            const target = +num.getAttribute('data-count');
+            let count = 0;
+            const step = Math.max(1, Math.floor(target / 20));
+            const timer = setInterval(() => {
+              count += step;
+              if (count >= target) {
+                num.innerText = target;
+                clearInterval(timer);
+              } else {
+                num.innerText = count;
+              }
+            }, 60);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+  </script>
+</body>
+</html>
